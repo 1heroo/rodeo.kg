@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/code
     ports:
-      - '8000:8000'
+      - '12500:8001'
     env_file:
       - ./source/.env
     depends_on:
