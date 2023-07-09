@@ -2,7 +2,7 @@ from fastapi import UploadFile
 from sqladmin import ModelView
 
 from source.core.settings import settings
-from source.news.models import New, NewsTitle
+from source.news.models import New, NewsTitle, ParticipationApplication
 
 
 class NewsTitleAdmin(ModelView, model=NewsTitle):
@@ -26,3 +26,8 @@ class NewAdmin(ModelView, model=New):
 
         image.filename = filename.replace(' ', '_')
         data['image_url'] = f'{settings.HOST}/static/news_images/{image.filename}'
+
+
+class ParticipationApplicationAdmin(ModelView, model=ParticipationApplication):
+    column_list = ['application_owner_name', 'amount_of_participants', 'phone_numbers']
+

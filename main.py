@@ -4,12 +4,12 @@ from fastapi.staticfiles import StaticFiles
 from sqladmin import Admin
 from starlette.middleware.cors import CORSMiddleware
 
-# from source.champions.admin import ParticipantsAdmin, ChampionAdmin
+from source.champions.admin import ParticipantsAdmin, ChampionAdmin
 from source.core.routes import router
 
 
 from source.db.db import async_engine
-from source.news.admin import NewAdmin, NewsTitleAdmin
+from source.news.admin import NewAdmin, NewsTitleAdmin, ParticipationApplicationAdmin
 from source.gallery.admin import GalleryImageAdmin, GalleryTitleAdmin
 from source.tournament.admin import TournamentTitleAdmin, TournamentAdmin, TournamentEventAdmin
 
@@ -42,11 +42,12 @@ admin.add_view(GalleryImageAdmin)
 admin.add_view(TournamentTitleAdmin)
 admin.add_view(TournamentAdmin)
 admin.add_view(TournamentEventAdmin)
-# admin.add_view(ParticipantsAdmin)
-# admin.add_view(ChampionAdmin)
+admin.add_view(ParticipantsAdmin)
+admin.add_view(ChampionAdmin)
+admin.add_view(ParticipationApplicationAdmin)
+
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
-
 
 
 if __name__ == '__main__':

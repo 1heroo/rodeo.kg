@@ -54,3 +54,20 @@ class New(Base):
 
     def __repr__(self):
         return str(self.title_ru)
+
+
+class ParticipationApplication(Base):
+    __tablename__ = 'aplications'
+
+    id = sa.Column(sa.Integer, primary_key=True)
+    application_owner_name = sa.Column(sa.String)
+    amount_of_participants = sa.Column(sa.Integer)
+    participants_names = sa.Column(sa.String)
+    participants_ages = sa.Column(sa.String)
+    phone_numbers = sa.Column(sa.String)
+
+    def __str__(self):
+        return str(self.application_owner_name)
+
+    def __repr__(self):
+        return str(self.application_owner_name)

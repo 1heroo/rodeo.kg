@@ -5,7 +5,6 @@ from sqlalchemy import func
 from sqlalchemy.orm import relationship
 from sqlalchemy_fields.storages import FileSystemStorage
 from sqlalchemy_fields.types import ImageType
-# from source.champions.model import Champion
 from source.db.db import Base
 
 
@@ -51,7 +50,7 @@ class Tournament(Base):
 
     created_at = sa.Column(sa.DateTime, server_default=func.now())
 
-    # champions = relationship('Champion', back_populates='tournament')
+    champions = relationship('Champion', back_populates='tournament')
 
     def __str__(self):
         return str(self.tournament_title_ru)
