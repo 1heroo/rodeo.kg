@@ -19,7 +19,7 @@ app.include_router(router=router)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://158.181.182.32:3000", 'http://158.181.182.32'],
+    allow_origins=["http://158.181.182.32:3000", "http://158.181.182.32"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -38,7 +38,7 @@ admin.add_view(TournamentEventAdmin)
 # admin.add_view(ParticipantsAdmin)
 # admin.add_view(ChampionAdmin)
 
-# app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 
