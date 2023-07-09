@@ -38,7 +38,7 @@ admin.add_view(TournamentEventAdmin)
 # admin.add_view(ParticipantsAdmin)
 # admin.add_view(ChampionAdmin)
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 
