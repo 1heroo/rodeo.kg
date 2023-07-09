@@ -3,6 +3,7 @@ from starlette import status
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 
+from source.core.settings import settings
 from source.news.services import NewsServices
 
 router = APIRouter(prefix='/news')
@@ -28,4 +29,8 @@ async def get_news_page(request: Request, language: str):
             'data': news_data
         },
         status_code=status.HTTP_200_OK,
-        headers={'Access-Control-Allow-Origin': '*'})
+        headers={
+            'Access-Control-Allow-Origin': settings.HOST,
+            'vary': 'Origin',
+            'Access-Control-Allow-Credentials': 'true'
+        })

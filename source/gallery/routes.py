@@ -2,6 +2,7 @@ from fastapi import APIRouter
 from starlette import status
 from starlette.responses import JSONResponse
 
+from source.core.settings import settings
 from source.gallery.queries import GalleryImageQueries
 from source.gallery.services import GalleryServices
 
@@ -27,5 +28,11 @@ async def get_gallery_page(language: str):
         content={
             'title': gallery_title_data,
             'data': gallery_images_data
-        }, status_code=status.HTTP_200_OK)
+        }, status_code=status.HTTP_200_OK,
+        headers={
+            'Access-Control-Allow-Origin': settings.HOST,
+            'vary': 'Origin',
+            'Access-Control-Allow-Credentials': 'true'
+        }
+    )
 

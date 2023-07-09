@@ -13,17 +13,26 @@ from source.news.admin import NewAdmin, NewsTitleAdmin
 from source.gallery.admin import GalleryImageAdmin, GalleryTitleAdmin
 from source.tournament.admin import TournamentTitleAdmin, TournamentAdmin, TournamentEventAdmin
 
-app = FastAPI(title='Rodeo KG docs')
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+def create_app() -> FastAPI:
+    current_app = FastAPI(title="EcomSecurity",
+                          description="The service, that allows you to be in secure",
+                          version="1.0",
+                          )
 
-app.include_router(router=router)
+    current_app.add_middleware(
+        CORSMiddleware,
+        allow_origins=['*'],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+    current_app.include_router(router=router)
+    return current_app
+
+
+app = create_app()
 
 
 admin = Admin(app=app, engine=async_engine)

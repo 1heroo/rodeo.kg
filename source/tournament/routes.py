@@ -2,6 +2,7 @@ from fastapi import APIRouter
 from starlette import status
 from starlette.responses import JSONResponse
 
+from source.core.settings import settings
 from source.tournament.services import TournamentServices
 
 router = APIRouter(prefix='/tournaments', tags=['Tournament'])
@@ -32,4 +33,10 @@ async def get_tournament_page(language: str):
             'tournaments': tournaments_data,
             'events': events_data
         },
-        status_code=status.HTTP_200_OK)
+        status_code=status.HTTP_200_OK,
+        headers={
+            'Access-Control-Allow-Origin': settings.HOST,
+            'vary': 'Origin',
+            'Access-Control-Allow-Credentials': 'true'
+        }
+    )
