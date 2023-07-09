@@ -15,10 +15,7 @@ from source.tournament.admin import TournamentTitleAdmin, TournamentAdmin, Tourn
 
 
 def create_app() -> FastAPI:
-    current_app = FastAPI(title="EcomSecurity",
-                          description="The service, that allows you to be in secure",
-                          version="1.0",
-                          )
+    current_app = FastAPI(title="RODEO KG")
 
     current_app.add_middleware(
         CORSMiddleware,
