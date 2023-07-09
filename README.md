@@ -26,8 +26,8 @@ HOST=https://api.rodeo.kg
 - Запустить проект командой: ```docker-compose -f local.yml up --build -d```
 
 
-Все, проект запущен, доступ к автоматически сгенерированной документации API http://yourip:8000/redoc/ или https://api.rodeo.kg/redoc.
-Доступ к админке проекта http://yourip:8000/admin/ или https://api.rodeo.kg/admin/
+Все, проект запущен, доступ к автоматически сгенерированной документации API http://yourip:12500/redoc/ или https://api.rodeo.kg/redoc.
+Доступ к админке проекта http://yourip:12500/admin/ или https://api.rodeo.kg/admin/
 
 
 -> Отключить проект можно командой ```docker-compose -f local.yml down```
