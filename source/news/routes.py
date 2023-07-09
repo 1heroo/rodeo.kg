@@ -27,4 +27,5 @@ async def get_news_page(request: Request, language: str):
             'title': news_title_data,
             'data': news_data
         },
-        status_code=status.HTTP_200_OK, headers={})
+        status_code=status.HTTP_200_OK,
+        headers={'Access-Control-Allow-Origin': '*'})
