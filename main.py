@@ -15,8 +15,6 @@ from source.tournament.admin import TournamentTitleAdmin, TournamentAdmin, Tourn
 
 app = FastAPI(title='Rodeo KG docs')
 
-app.include_router(router=router)
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://158.181.182.32:3000", "http://158.181.182.32"],
@@ -24,6 +22,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(router=router)
+
 
 admin = Admin(app=app, engine=async_engine)
 
