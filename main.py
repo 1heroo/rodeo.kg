@@ -17,7 +17,7 @@ app = FastAPI(title='Rodeo KG docs')
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://158.181.182.32:3000", "http://158.181.182.32"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
