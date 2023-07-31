@@ -4,6 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from sqladmin import Admin
 from starlette.middleware.cors import CORSMiddleware
 
+from source.about_us.admin import AboutUsAdmin
 from source.champions.admin import ParticipantsAdmin, ChampionAdmin
 from source.core.routes import router
 
@@ -44,7 +45,9 @@ admin.add_view(TournamentAdmin)
 admin.add_view(TournamentEventAdmin)
 admin.add_view(ParticipantsAdmin)
 admin.add_view(ChampionAdmin)
+admin.add_view(AboutUsAdmin)
 admin.add_view(ParticipationApplicationAdmin)
+
 
 
 app.mount("/static", StaticFiles(directory="static"), name="static")

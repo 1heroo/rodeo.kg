@@ -1,4 +1,4 @@
-from source.champions.model import Champion, Participants
+from source.champions.models import Champion, Participants
 from source.db.db import async_session
 from source.db.queries import BaseQueries
 import sqlalchemy as sa

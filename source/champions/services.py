@@ -1,4 +1,4 @@
-from source.champions.model import Participants
+from source.champions.models import Participants
 from source.champions.queries import ParticipantQueries, ChampionQueries
 from source.tournament.models import Tournament
 from source.tournament.queries import TournamentQueries

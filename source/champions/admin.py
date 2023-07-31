@@ -1,7 +1,7 @@
 from fastapi import UploadFile
 from sqladmin import ModelView
 
-from source.champions.model import Participants, Champion
+from source.champions.models import Participants, Champion
 from source.core.settings import settings
 
 
